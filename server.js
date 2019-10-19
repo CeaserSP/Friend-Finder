@@ -4,4 +4,5 @@ var path = require("path");
 
 // setup express app
 var app = express();
-var PORT = 3000;
+var PORT = precess.env.PORT || 3306;
+
