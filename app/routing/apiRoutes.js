@@ -3,7 +3,7 @@
 
 var friends = require("../data/friends");
 
-
+module.exports = function(app, path){
 
 
 // Displays all friends
@@ -23,3 +23,4 @@ app.post("/api/friends", function(req, res) {
   res.json(newFriend);
 });
 
+};
