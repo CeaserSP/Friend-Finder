@@ -25,8 +25,3 @@ app.post("/api/friends", function(req, res) {
   res.json(newFriend);
 });
 
-// Starts the server to begin listening
-// =============================================================
-app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
-  });
