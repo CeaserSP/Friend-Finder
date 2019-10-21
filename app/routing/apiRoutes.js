@@ -24,3 +24,4 @@ app.post("/api/friends", function(req, res) {
 });
 
 };
+// To do: set up function(s) for incoming survey
