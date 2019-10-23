@@ -17,6 +17,11 @@ module.exports = function (app, path) {
         // newFriend.routeName = newFriend.name.replace(/\s+/g, "").toLowerCase();
 // most compatible object
 var bestMatch = {};
+// for loop to loop through friends and scores from value
+for (i=0; i< newFriends..length; i++){
+
+}
+
         console.log(newFriend);
 
         friends.push(newFriend);
