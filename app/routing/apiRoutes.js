@@ -3,25 +3,26 @@
 
 var friends = require("../data/friends");
 
-module.exports = function(app, path){
+module.exports = function (app, path) {
 
 
-// Displays all friends
-app.get("/api/friends", function(req, res) {
-    return res.json(friends);
-  });
+    // Displays all friends
+    app.get("/api/friends", function (req, res) {
+        return res.json(friends);
+    });
 
-  // Create New friends - takes in JSON input
-app.post("/api/friends", function(req, res) {
-    var newFriend = req.body;
-    newFriend.routeName = newFriend.name.replace(/\s+/g, "").toLowerCase();
- 
-  console.log(newFriend);
+    // Create New friends - takes in JSON input
+    app.post("/api/friends", function (req, res) {
+        var newFriend = req.body;
+        // newFriend.routeName = newFriend.name.replace(/\s+/g, "").toLowerCase();
+// most compatible object
+var bestMatch = {};
+        console.log(newFriend);
 
-  friends.push(newFriend);
+        friends.push(newFriend);
 
-  res.json(newFriend);
-});
+        res.json(newFriend);
+    });
 
 };
 // To do: set up function(s) for incoming survey
