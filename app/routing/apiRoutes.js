@@ -15,7 +15,7 @@ module.exports = function (app, path) {
     app.post("/api/friends", function (req, res) {
         var newFriend = req.body;
         // newFriend.routeName = newFriend.name.replace(/\s+/g, "").toLowerCase();
-// most compatible object
+        // most compatible object
 var bestMatch = {};
 // for loop to loop through friends and scores from value
 for (i=0; i< newFriends..length; i++){
