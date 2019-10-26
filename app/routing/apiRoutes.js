@@ -21,14 +21,17 @@ module.exports = function (app, path) {
         for (i = 0; i < newFriends.scores.length; i++) {
             newFriends.scores[i] = parseInt(newFriend.scores[i])
         };
-        var friendScore = 0;
+        var friendIndex = 0;
 
-        var scoreDifference = 40;
-// nexted loop to get total scores for each friend
-        for (i=0; i< friends.length; i++){
-            for (var ii = 0; ii < friends[i].scores.length; ii++){
-                
+        var friendScoreDiff = 40;
+        // nexted loop to get total scores for each friend
+        for (i = 0; i < friends.length; i++) {
+            var totalDiff = 0;
+            for (var ii = 0; ii < friends[i].scores.length; ii++) {
+                var scoreDiff = Math.abs(friends[i].scores[ii] - newFriend.scores[ii]);
+                totalDiff = scoreDiff;
             }
+
         }
         // //         console.log(newFriend);
 
