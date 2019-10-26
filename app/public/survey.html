@@ -122,6 +122,26 @@
             </select><br>
             <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">Submit</button>
         </form>
+        <!-- Modal -->
+        <div class="modal" tabindex="-1" role="dialog" id="matchResult">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Best Match</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <h1 id = "mostComp"></h1>
+                      <img id="mImg" src="">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
         <!-- To do: Modal that displays most compatible friend -->
         <script src="../routing/apiRoutes.js"></script>
         <script>
@@ -147,6 +167,10 @@
                 $.post("/api/friends", newFriend, function (friends) {
                     // friends.push(newFriend);
                     });
+                    // Modal get image and name to be displayed
+                    $("mostComp").text(data.name);
+                    $("mImg").attr("src", data.photo)
+                $("matchResult").modal("toggle")
             });
         </script>
 
