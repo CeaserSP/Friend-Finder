@@ -15,13 +15,13 @@ module.exports = function (app, path) {
     //     // Create New friends - takes in JSON input
     app.post("/api/friends", function (req, res) {
 
-        //         // newFriend.routeName = newFriend.name.replace(/\s+/g, "").toLowerCase();
-        //         // most compatible object
+// most compatible object
         var bestMatch = {};
-        // // // for loop to loop through friends and scores from value
-        // // for (i=0; i< newFriends.scores.length; i++){
-
-        // // }
+// for loop to loop through friends and scores and parses the scores
+        for (i=0; i< newFriends.scores.length; i++){
+newFriends.scores[i] = parseInt(newFriend.scores[i])
+        };
+    
 
         // //         console.log(newFriend);
 
