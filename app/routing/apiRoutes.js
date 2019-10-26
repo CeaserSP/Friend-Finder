@@ -14,17 +14,16 @@ module.exports = function (app, path) {
 
     //     // Create New friends - takes in JSON input
     app.post("/api/friends", function (req, res) {
-
         // most compatible object
         var bestMatch = {};
         // for loop to loop through friends and scores and parses the scores
         for (i = 0; i < newFriends.scores.length; i++) {
             newFriends.scores[i] = parseInt(newFriend.scores[i])
         };
+        // index that compares all friends to see if this friend is or isn't the best match
         var friendIndex = 0;
-
         var friendScoreDiff = 40;
-        // nexted loop to get total scores for each friend
+        // nested loop to get total scores for each friend
         for (i = 0; i < friends.length; i++) {
             var totalDiff = 0;
             for (var ii = 0; ii < friends[i].scores.length; ii++) {
@@ -38,13 +37,10 @@ module.exports = function (app, path) {
                 riendScoreDiff = totalDiff;
             }
         }
-        // //         console.log(newFriend);
-
-        // //         friends.push(newFriend);
-
-        // //         res.json(newFriend);
-        //     });
+        // set best match equal to friend[index]
+        bestMatch = friends[friendIndex];
+        // best match
+        res.json(bestMatch);
 
     });
 };
-// To do: set up function(s) for incoming survey
