@@ -31,7 +31,12 @@ module.exports = function (app, path) {
                 var scoreDiff = Math.abs(friends[i].scores[ii] - newFriend.scores[ii]);
                 totalDiff = scoreDiff;
             }
-
+            // best match if current friend is less than next friend set to friendindex
+            if (totalDiff < friendScoreDiff) {
+                friendIndex = i;
+                // set friendscorediff to total diff bc it is the current best match
+                riendScoreDiff = totalDiff;
+            }
         }
         // //         console.log(newFriend);
 
