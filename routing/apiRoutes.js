@@ -4,7 +4,7 @@ var friends = require("../data/friends.js");
 
 module.exports = function (app) {
 
-    console.log(newFriend);
+    
 
 
     //     // Displays all friends
@@ -14,6 +14,7 @@ module.exports = function (app) {
 
     //     // Create New friends - takes in JSON input
     app.post("/api/friends", function (req, res) {
+        console.log(req);
         // most compatible object
         var bestMatch = {};
         // for loop to loop through friends and scores and parses the scores
@@ -34,7 +35,7 @@ module.exports = function (app) {
             if (totalDiff < friendScoreDiff) {
                 friendIndex = i;
                 // set friendscorediff to total diff bc it is the current best match
-                riendScoreDiff = totalDiff;
+                friendScoreDiff = totalDiff;
             }
         }
         // set best match equal to friend[index]

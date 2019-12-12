@@ -4,16 +4,19 @@ var path = require("path");
 
 // setup express app
 var app = express();
-var PORT = precess.env.PORT || 3306;
+var PORT = process.env.PORT || 8080;
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// Static directory
+app.use(express.static("public"));
+
 // ROUTER
 // The below points our server to a series of "route" files.
-require("./routing/apiRoutes")(app, path);
-require("./routing/htmlRoutes")(app, path);
+require("./routing/apiRoutes.js")(app, path);
+require("./routing/htmlRoutes.js")(app, path);
 
 // Starts the server to begin listening
 app.listen(PORT, function() {
